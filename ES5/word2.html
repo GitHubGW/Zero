@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기 게임2</title>
+  </head>
+  <body>
+    <h2>끝말잇기 게임2</h2>
+    <script>
+      while (true) {
+        var word1 = prompt(
+          "두 글자 끝말잇기 게임을 시작합니다!(ex:악어) 첫 번째 단어를 입력해주세요"
+        );
+        if (word1 == "") {
+          alert("첫 번째 단어를 입력하지 않았습니다.");
+        } else if (word1 == String(word1)) {
+          var word2 = prompt("두 번째 단어를 입력해주세요", word1[1]);
+        }
+        if (word2 == "") {
+          alert("두 번째 단어를 입력하지 않았습니다.");
+        } else if (word2 == String(word2)) {
+          while (word1[1] === word2[0]) {
+            // alert("딩동댕");
+            word1 = prompt("첫 번째 단어를 입력해주세요!", word2[1]);
+            if (word2[1] === word1[0]) {
+              word2 = prompt("두 번째 단어를 입력해주세요!", word1[1]);
+            }
+          }
+          alert("끝말잇기 단어가 틀렸습니다.");
+        }
+      }
+    </script>
+  </body>
+</html>

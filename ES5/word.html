@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기 게임</title>
+  </head>
+  <body>
+    <h2>끝말잇기 게임</h2>
+    <script>
+      // while문으로 만들기
+      // var word = "원숭이";
+      // while (true) {
+      //   var answer = prompt(word);
+      //   // 맞았을 때
+      //   if (word[word.length - 1] === answer[0]) {
+      //     word = answer;
+      //   } else {
+      //     // 틀렸을 때
+      //     alert("첫 글자가 틀렸습니다.");
+      //   }
+      // }
+
+      // for문으로 만들기
+      for (var word = "고양이"; true; ) {
+        var answer = prompt(word);
+        // 맞았을 때
+        if (word[word.length - 1] === answer[0]) {
+          word = answer;
+        } else {
+          // 틀렸을 때
+          alert("첫 글자가 틀렸습니다.");
+        }
+      }
+    </script>
+  </body>
+</html>
