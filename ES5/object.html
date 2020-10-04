@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var pet1 = "강아지";
+      // var pet2 = "고양이";
+      // var pet3 = "원숭이";
+      // console.log(pet1);
+      // console.log(pet2);
+      // console.log(pet3);
+
+      var middle1 = {
+        이름: "아데산야",
+        키: 190,
+        몸무게: 84,
+      };
+      console.log(middle1);
+      console.log(middle1["이름"]);
+      console.log(middle1["키"]);
+      console.log(middle1["몸무게"]);
+
+      var middle2 = {
+        이름: "파울로 코스타",
+        키: 183,
+        몸무게: 84,
+        국적: () => {
+          console.log("브라질");
+        },
+      };
+      console.log(middle2);
+      console.log(middle2.이름);
+      console.log(middle2.키);
+      console.log(middle2.몸무게);
+      console.log(middle2.국적());
+      console.log("===============");
+
+      console.log(middle2.이름);
+      console.log(middle2["이름"]);
+
+      var 보하시냐 = "이름";
+      console.log(middle2.보하시냐);
+      // 객체.변수는 불가능하지만 객체[변수]로는 사용가능
+      // 이게 .과 []의 차이점
+      console.log(middle2[보하시냐]);
+    </script>
+  </body>
+</html>
