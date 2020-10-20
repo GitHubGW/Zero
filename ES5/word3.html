@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>끝말잇기 게임3</title>
+  </head>
+  <body>
+    <h1>끝말잇기 게임3</h1>
+
+    <script>
+      var user_div = document.createElement("div");
+      document.body.append(user_div);
+      user_div.textContent = "고양이";
+      console.log(user_div.textContent);
+
+      var user_form = document.createElement("form");
+      document.body.append(user_form);
+      console.log(user_form);
+
+      var user_input = document.createElement("input");
+      user_form.append(user_input);
+
+      var user_button = document.createElement("button");
+      user_form.append(user_button);
+      user_button.textContent = "입력!";
+
+      var user_result = document.createElement("p");
+      document.body.append(user_result);
+      user_result.textContent = "결과창";
+
+      user_form.addEventListener("submit", function (e) {
+        // console.log(e);
+        e.preventDefault();
+        if (user_div.textContent[user_div.textContent.length - 1] === user_input.value[0]) {
+          console.log(user_input.value);
+          user_result.textContent = "딩동댕";
+          user_div.textContent = user_input.value;
+          user_input.value = "";
+          user_input.focus();
+        } else {
+          user_result.textContent = "땡";
+          user_input.value = "";
+          user_input.focus();
+        }
+      });
+
+      //   function name(num1, num2) {
+      //     console.log(num1 + num2);
+      //   }
+      //   name(5, 6);
+    </script>
+  </body>
+</html>
