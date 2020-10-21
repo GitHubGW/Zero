@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자야구 게임</title>
+  </head>
+  <body>
+    <h1>숫자야구 게임</h1>
+    <form action="">
+      <input type="text" maxlength="4" />
+      <button>입력</button>
+    </form>
+    <h2>결과창</h2>
+    <script>
+      let user_form = document.querySelector("form");
+      let user_input = document.querySelector("input");
+      let user_result = document.querySelector("h2");
+      let num_array;
+      let num_array_result;
+
+      function number_choose() {
+        num_array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        num_array_result = [];
+        for (let i = 0; i < 4; i++) {
+          let num_choose = num_array.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+          num_array_result.push(num_choose);
+        }
+        console.log(num_array_result);
+      }
+
+      number_choose();
+
+      let error_number = 0;
+
+      user_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let user_input_value = user_input.value;
+        console.log(user_input_value);
+
+        if (user_input_value === num_array_result.join("")) {
+          user_result.textContent = "홈런!";
+          user_input.value = "";
+          user_input.focus();
+          number_choose();
+          error_number = 0;
+        } else {
+          let user_input_value_array = user_input_value.split("");
+          console.log(user_input_value_array);
+          let strike = 0;
+          let ball = 0;
+          error_number++;
+          console.log("기회가" + (10 - error_number) + "번 남았습니다");
+
+          if (error_number === 10) {
+            //10번 틀린 경우
+            user_result.textContent = "게임오버, 답:" + num_array_result.join("");
+            user_input.value = "";
+            user_input.focus();
+            number_choose();
+            error_number = 0;
+          } else {
+            //10번 미만 틀린 경우
+            for (let i = 0; i < 4; i++) {
+              if (Number(user_input_value_array[i]) === num_array_result[i]) {
+                strike++;
+              } else if (num_array_result.indexOf(Number(user_input_value_array[i])) > -1) {
+                ball++;
+              }
+            }
+            user_result.textContent = strike + "스트라이크, " + ball + "볼";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
