@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습</title>
+    <style>
+      table {
+      }
+      tr {
+      }
+      td {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>연습</h1>
+    <table border="1">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <script>
+      let table_array = [[], [], []];
+      let table_tr = document.querySelectorAll("tr");
+      let table_td = document.querySelectorAll("td");
+      console.log(table_tr);
+      console.log(table_td);
+
+      let mytd = Array.prototype.slice.call(table_td);
+      console.log(mytd);
+
+      //   for (let i = 0; i < 3; i++) {
+      //     console.log(table_tr[i]);
+      //   }
+
+      //   let table_td2 = document.querySelector("td");
+      //   console.log(table_td2);
+
+      //   table_array[0].push(table_td[0]);
+      //   table_array[0].push(table_td[1]);
+      //   table_array[0].push(table_td[2]);
+
+      //   table_array[1].push(table_td[3]);
+      //   table_array[1].push(table_td[4]);
+      //   table_array[1].push(table_td[5]);
+
+      //   table_array[2].push(table_td[6]);
+      //   table_array[2].push(table_td[7]);
+      //   table_array[2].push(table_td[8]);
+
+      //   console.log(table_array[0]);
+      //   console.log(table_array[1]);
+      //   console.log(table_array[2]);
+
+      //   table_td2.addEventListener("click", function () {
+      //     console.log("칸 클릭중!");
+      //   });
+    </script>
+  </body>
+</html>
