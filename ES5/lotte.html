@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = Array(45);
+      console.log(arr);
+      //   console.log(arr[0]);
+      //   console.log(arr[1]);
+      //   console.log(arr[2]);
+      //   console.log(arr[3]);
+
+      let fill = arr.fill();
+      console.log(fill);
+
+      fill.forEach(function (e, user_index) {
+        fill[user_index] = user_index + 1;
+
+        // fill.push(user_index + 1);
+      });
+      console.log(fill);
+
+      //   let array1 = ["a", "b", "c"];
+      //   console.log(array1);
+
+      //   array1.forEach(function (e, num, user_arr) {
+      //     console.log(e, num, user_arr);
+      //   });
+    </script>
+  </body>
+</html>
