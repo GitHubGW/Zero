@@ -4,32 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #result {
+        /* border: 5px solid red; */
+      }
+    </style>
   </head>
   <body>
+    <p id="result">당첨 숫자들:</p>
+    <p class="bonus">보너스 숫자:</p>
+
+    <span class="hello">hello</span>
+
     <script>
-      let arr = Array(45);
-      console.log(arr);
-      //   console.log(arr[0]);
-      //   console.log(arr[1]);
-      //   console.log(arr[2]);
-      //   console.log(arr[3]);
+      let arr1 = [1, 4, 9, 16];
+      //   console.log(arr1);
 
-      let fill = arr.fill();
-      console.log(fill);
-
-      fill.forEach(function (e, user_index) {
-        fill[user_index] = user_index + 1;
-
-        // fill.push(user_index + 1);
+      let trans_arr1 = arr1.map(function (x, index) {
+        return index + 1;
       });
-      console.log(fill);
+      //   console.log(trans_arr1);
 
-      //   let array1 = ["a", "b", "c"];
-      //   console.log(array1);
+      //   let arr2 = Array(30);
+      //   console.log(arr2);
 
-      //   array1.forEach(function (e, num, user_arr) {
-      //     console.log(e, num, user_arr);
+      //   arr2.fill();
+
+      //   arr2.map(function (x, index) {
+      //     console.log(x, index);
       //   });
+
+      let arr45 = Array(45)
+        .fill()
+        .map(function (x, arr_index) {
+          return arr_index + 1;
+        });
+      // console.log(arr45);
+      //   console.log(arr45.length);
+      //   console.log(arr45.splice(30, 1)[0]);
+
+      let choice = [];
+      while (arr45.length > 0) {
+        let move = arr45.splice(Math.floor(Math.random() * arr45.length), 1)[0];
+        choice.push(move);
+      }
+      console.log(choice);
+      let bonus_num = choice[choice.length - 1];
+      let choice_num = choice.slice(0, 6);
+      let choice_num_sort = choice_num.sort(function (a, b) {
+        // return a - b;
+        console.log(a, b);
+      });
+      console.log("당첨 숫자들", choice_num_sort, "보너스 숫자", bonus_num);
+
+      // for (let i = 0; i < choice_num_sort.length; i++) {
+      //   document.getElementById("result").textContent += choice_num_sort[i] + ", ";
+      //   // document.getElementById("result").appendChild(choice_num_sort[i]);
+
+      //   setTimeout(function () {
+      //     document.getElementById("result").appendChild(choice_num_sort[i]);
+      //   }, 1000);
+      // }
+      setTimeout(function () {
+        document.getElementById("result").textContent = choice_num_sort[0];
+      }, 1000);
+      setTimeout(function () {
+        document.getElementById("result").textContent = choice_num_sort[1];
+      }, 2000);
+      setTimeout(function () {
+        document.getElementById("result").textContent = choice_num_sort[2];
+      }, 3000);
+      setTimeout(function () {
+        document.getElementById("result").textContent = choice_num_sort[3];
+      }, 4000);
+      setTimeout(function () {
+        document.getElementById("result").textContent = choice_num_sort[4];
+      }, 5000);
+      setTimeout(function () {
+        document.getElementById("result").textContent = choice_num_sort[5];
+      }, 6000);
+
+      // let haha = document.getElementsByClassName("bonus")[0];
+      let haha = document.getElementsByClassName("bonus");
+      console.log(haha);
+      console.log(haha[0]);
+      3;
+      haha[0].textContent = "보너스 숫자:" + bonus_num;
+      // console.log(haha);
+      // console.log(haha.length);
+      // haha.appendChild(123);
     </script>
   </body>
 </html>
